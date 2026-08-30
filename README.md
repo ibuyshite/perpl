@@ -12,7 +12,7 @@ sudo apt install -y python3 python3-venv python3-pip
 ## 2. Install Bot Dependencies
 
 ```bash
-cd/peprl-mm-bot
+cd/peprl
 python3 -m venv .venv
 source venv/bin/activate
 python -m pip install --upgrade pip
@@ -42,7 +42,7 @@ Keep `DRY_RUN=true` first.
 ## 3. Test in Dry Run
 
 ```bash
-cd/peprl-mm-bot
+cd/peprl
 source venv/bin/activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
@@ -76,7 +76,7 @@ ALLOW_EMERGENCY_MARKET_CLOSE=false
 
 Then:
 ```bash
-cd/peprl-mm-bot
+cd/peprl
 source venv/bin/activate
 python main.py
 ```
