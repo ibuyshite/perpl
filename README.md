@@ -9,7 +9,7 @@ sudo apt update
 sudo apt install -y python3 python3-venv python3-pip
 ```
 
-## 4. Install Bot Dependencies
+## 2. Install Bot Dependencies
 
 ```bash
 cd/peprl-mm-bot
@@ -39,13 +39,14 @@ python tools/get_account_id.py
 
 Keep `DRY_RUN=true` first.
 
-## 5. Test in Dry Run
+## 3. Test in Dry Run
 
 ```bash
-sudo -u peprl bash
-cd /opt/peprl-mm-bot
-. .venv/bin/activate
-python -u main.py
+cd/peprl-mm-bot
+source venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+nano .env
 ```
 
 You should see:
@@ -60,36 +61,9 @@ market subscriptions: ...
 
 Stop it with `Ctrl+C`.
 
-## 6. Install as a Service
-
-```bash
-sudo cp /opt/peprl-mm-bot/deploy/perpl-mm-bot.service /etc/systemd/system/perpl-mm-bot.service
-sudo systemctl daemon-reload
-sudo systemctl enable perpl-mm-bot
-sudo systemctl start perpl-mm-bot
-```
-
-Watch logs:
-
-```bash
-sudo journalctl -u perpl-mm-bot -f
-```
-
-Stop/restart:
-
-```bash
-sudo systemctl stop perpl-mm-bot
-sudo systemctl restart perpl-mm-bot
-```
-
-## 7. Go Live
+## 4. Go Live
 
 Only after dry-run logs look correct:
-
-```bash
-sudo systemctl stop perpl-mm-bot
-sudo -u peprl nano /opt/peprl-mm-bot/.env
-```
 
 Set:
 
@@ -101,10 +75,10 @@ ALLOW_EMERGENCY_MARKET_CLOSE=false
 ```
 
 Then:
-
 ```bash
-sudo systemctl start perpl-mm-bot
-sudo journalctl -u perpl-mm-bot -f
+cd/peprl-mm-bot
+source venv/bin/activate
+python main.py
 ```
 
 ## Recommended VPS
