@@ -80,12 +80,12 @@ cd/peprl-mm-bot
 source venv/bin/activate
 python main.py
 ```
-## Most Important :
+## 5. Most Important :
 
 This Bot Still Have Few Bugs So You Can Use Codex or Cursor To Solve It 
 - This bot places order on the top of both side of orderbook 
 - This bot closes the position instantly whenever it opens up position as taker
-- This Maker - Taker Bot ( so keep this in mind )
+- This is Maker - Taker Bot (keep this in mind)
 
 ## Recommended VPS
 
