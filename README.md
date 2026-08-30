@@ -12,15 +12,12 @@ sudo apt install -y python3 python3-venv python3-pip
 ## 4. Install Bot Dependencies
 
 ```bash
-sudo -u peprl bash
-cd /opt/peprl-mm-bot
+cd/peprl-mm-bot
 python3 -m venv .venv
-. .venv/bin/activate
+source venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-cp .env.mainnet.example .env
+pip install -r requirements.txt
 nano .env
-chmod 600 .env
 exit
 ```
 
@@ -29,7 +26,7 @@ Fill these values in `.env`:
 ```env
 PERPL_API_KEY=
 PERPL_API_KEY_SECRET=
-DRY_RUN=true
+DRY_RUN=false (false to run on mainnet)
 ```
 
 The bot auto-discovers your exchange account ID after API key sign-in. `PERPL_ACCOUNT_ID` is optional — set it only if your wallet has multiple accounts.
