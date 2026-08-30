@@ -2,38 +2,7 @@
 
 These steps assume Ubuntu 22.04 or 24.04.
 
-## 1. Create a Bot User
-
-```bash
-sudo adduser --disabled-password --gecos "" peprl
-sudo mkdir -p /opt/peprl-mm-bot
-sudo chown -R peprl:peprl /opt/peprl-mm-bot
-```
-
-## 2. Upload the Bot
-
-From PowerShell on your local machine, zip and upload this folder:
-
-```powershell
-Compress-Archive -Path C:\Users\91700\Desktop\Peprl\* -DestinationPath C:\Users\91700\Desktop\peprl-mm-bot.zip -Force
-scp C:\Users\91700\Desktop\peprl-mm-bot.zip root@YOUR_VPS_IP:/tmp/peprl-mm-bot.zip
-```
-
-Then SSH into the VPS and unpack it:
-
-```bash
-sudo apt update
-sudo apt install -y unzip
-sudo unzip -o /tmp/peprl-mm-bot.zip -d /opt/peprl-mm-bot
-```
-
-Fix ownership:
-
-```bash
-sudo chown -R peprl:peprl /opt/peprl-mm-bot
-```
-
-## 3. Install Python
+## 1. Install Python
 
 ```bash
 sudo apt update
